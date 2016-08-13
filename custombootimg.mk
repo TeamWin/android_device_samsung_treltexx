@@ -4,7 +4,7 @@ $(INSTALLED_RECOVERYIMAGE_TARGET): $(MKBOOTIMG) \
 		$(recovery_ramdisk) \
 		$(recovery_kernel)
 	@echo ----- Creating ramdisk ------
-	(cd out/target/product/treltexx/recovery/root/ && find * | sort | cpio -o -H newc) | gzip > $(recovery_ramdisk)
+	(cd out/target/product/trhpltexx/recovery/root/ && find * | sort | cpio -o -H newc) | gzip > $(recovery_ramdisk)
 	@echo ----- Making recovery image ------
 	$(MKBOOTIMG_BIN) --kernel $(TARGET_PREBUILT_KERNEL) --ramdisk $(recovery_ramdisk) --base $(BOARD_KERNEL_BASE) --pagesize $(BOARD_KERNEL_PAGESIZE) $(BOARD_MKBOOTIMG_ARGS) --output $@
 	@echo ----- Made recovery image -------- $@

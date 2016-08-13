@@ -1,3 +1,3 @@
-ifneq ($(filter treltexx,$(TARGET_DEVICE)),)
+ifneq ($(filter trhpltexx,$(TARGET_DEVICE)),)
     include $(all-subdir-makefiles)
 endif

@@ -1,13 +1,12 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # The gps config appropriate for this device
-$(call inherit-product, device/common/gps/gps_us_supl.mk)
+#$(call inherit-product, device/common/gps/gps_us_supl.mk)
+#$(call inherit-product-if-exists, vendor/samsung/trhpltexx/ha3g-vendor.mk)
 
-$(call inherit-product-if-exists, vendor/samsung/treltexx/ha3g-vendor.mk)
+DEVICE_PACKAGE_OVERLAYS += device/samsung/trhpltexx/overlay
 
-DEVICE_PACKAGE_OVERLAYS += device/samsung/treltexx/overlay
-
-LOCAL_PATH := device/samsung/treltexx
+LOCAL_PATH := device/samsung/trhpltexx
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 	LOCAL_KERNEL := $(LOCAL_PATH)/kernAl
 else
@@ -24,7 +23,7 @@ PRODUCT_COPY_FILES += \
 
 $(call inherit-product, build/target/product/full.mk)
 
-PRODUCT_NAME := samsung_treltexx
+PRODUCT_NAME := samsung_trhpltexx
 PRODUCT_BRAND := Samsung
 
 include $(CLEAR_VARS)
