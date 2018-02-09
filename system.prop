@@ -1,0 +1,7 @@
+ro.hardware=universal5433
+ro.boot.bootdevice=15540000.dwmmc0
+ro.arch=exynos5433
+ro.chipname=exynos5433
+ro.sf.lcd_density=640
+ro.hardware.keystore=universal5433
+#persist.sys.usb.config=mtp,adb
