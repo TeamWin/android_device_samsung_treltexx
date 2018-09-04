@@ -33,7 +33,7 @@ deploy:
   on:
     tags: false
     repo: ananjaser1211/android_device_samsung_treltexx
-    branch: master
+    branch: twrp-7.1
 branches:
   except:
     - /^(?i:untagged)-.*$/
