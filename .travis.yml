@@ -20,8 +20,11 @@ script:
     EOF
 after_success:
   - export version=$(cat bootable/recovery/variables.h | grep "define TW_MAIN_VERSION_STR" | cut -d '"' -f2)
+  - echo -n "SEANDROIDENFORCE" >> "$HOME/twrp/out/target/product/treltexx/recovery.img"
   - cp $HOME/twrp/out/target/product/treltexx/recovery.img $HOME/twrp/TWRP-$version-treltexx-$(date +"%Y%m%d").img
-  - tar -cf $HOME/twrp/TWRP-$version-treltexx-$(date +"%Y%m%d").tar $HOME/twrp/out/target/product/treltexx/recovery.img
+  - cd $HOME/twrp/out/target/product/treltexx/
+  - tar -cf recovery.tar recovery.img
+  - cp recovery.tar $HOME/twrp/TWRP-$version-treltexx-$(date +"%Y%m%d").tar
 
 
 deploy:
