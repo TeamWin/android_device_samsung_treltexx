@@ -21,7 +21,6 @@
 /data		ext4		/dev/block/15540000.dwmmc0/by-name/USERDATA	flags=encryptable=footer;length=-16384
 /cache		ext4		/dev/block/15540000.dwmmc0/by-name/CACHE
 /modem		emmc		/dev/block/15540000.dwmmc0/by-name/RADIO	flags=backup=1;display="Modem";flashimg
-/hidden		ext4		/dev/block/15540000.dwmmc0/by-name/HIDDEN	display="Hidden"
 /efs		ext4		/dev/block/15540000.dwmmc0/by-name/EFS	flags=backup=1;display="EFS"
 /efs1		emmc		/dev/block/15540000.dwmmc0/by-name/m9kefs1	flags=backup=1;subpartitionof=/efs
 /efs2		emmc		/dev/block/15540000.dwmmc0/by-name/m9kefs2	flags=backup=1;subpartitionof=/efs
@@ -29,3 +28,4 @@
 /misc		emmc		/dev/block/15540000.dwmmc0/by-name/OTA
 /external_sd	auto	/dev/block/mmcblk1p1 /dev/block/mmcblk1	flags=display="Micro SDCard";storage;wipeingui;removable
 /usb-otg	auto		/dev/block/sda1 /dev/block/sda		flags=display="USB OTG";storage;wipeingui;removable
+	
