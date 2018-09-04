@@ -1,3 +1,4 @@
 ro.arch=exynos5433
 ro.chipname=exynos5433
 ro.sf.lcd_density=560
+ro.boot.bootdevice=15540000.dwmmc0
