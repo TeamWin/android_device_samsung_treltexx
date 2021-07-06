@@ -1,11 +1,11 @@
 #
-# Copyright (C) 2018 DevKingsTeam Open-source
+# Copyright (C) 2021 universal5433 Open-source
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-# http://www.apache.org/licenses/LICENSE-2.0
+#      http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -15,6 +15,9 @@
 #
 
 DEVICE_TREE := device/samsung/treltexx
+
+CM_PLATFORM_SDK_VERSION := 7	# Required for libf2fs.so
+override TARGET_OUT_VENDOR_SHARED_LIBRARIES = $(TARGET_OUT_SHARED_LIBRARIES)
 
 # Bootloader
 TARGET_NO_BOOTLOADER := true
@@ -46,7 +49,6 @@ BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x01000000 -
 BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_SUPPRESS_SECURE_ERASE := true
 TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_USERIMAGES_USE_F2FS := true
 
 # TWRP specific build flags
 RECOVERY_VARIANT := twrp
@@ -65,6 +67,9 @@ TW_EXCLUDE_TWRPAPP := true
 TW_USE_NEW_MINADBD := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_INCLUDE_FBE := true
+TW_INCLUDE_CRYPTO := true
 BOARD_HAS_NO_REAL_SDCARD := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TW_INCLUDE_CRYPTO := true
+# No love for the wicked (device ships with M)
+TW_EXCLUDE_SUPERSU := true
